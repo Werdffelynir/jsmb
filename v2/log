@@ -1,0 +1,18 @@
+isisisisisisisisisisisisisisisisisisisisisisisisisisisis
+
+
+//$config = file_get_contents(__DIR__ . '/config.json');
+//new Builder($config);
+
+
+$resource = fopen("php://stdin", "r");
+print_r($argv);
+print_r(stream_get_contents($resource));
+file_put_contents('log', 'is', FILE_APPEND);
+
+/**
+ * cat config.json | php builder.php
+ */
+
+
+
