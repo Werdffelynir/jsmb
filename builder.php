@@ -41,10 +41,16 @@ class Builder
     }
 
     public function build($context) {
-        if (file_put_contents($this->config['output'], $context))
-            $this->console("[Parser] File {$this->config['output']} is created.");
+        $output = $this->config['output'];
+        $dirname = substr($output, 0, strrpos($output, '/'));
+
+        if (!is_dir($dirname)) mkdir($dirname);
+        if (!is_file($output)) file_put_contents($output, '');
+
+        if (file_put_contents($output, $context))
+            $this->console("[Parser] File {$output} is created.");
         else
-            $this->console("[Parser] Error File {$this->config['output']} not created. Content not find.");
+            $this->console("[Parser] Error File {$output} not created. Content not find.");
     }
 
     public function replaced($context) {
@@ -74,10 +80,8 @@ class Builder
         $stdin = fopen("php://stdin", "r");
         $response = trim(fgets($stdin));
         fclose($stdin);
-        if (is_callable($callback)) {
-            //call_user_func($callback, $response);
-            $callback($response);
-        }
+        if (is_callable($callback))
+            call_user_func($callback, $response);
     }
 
     public function recursiveGetContent ($path, &$context) {
