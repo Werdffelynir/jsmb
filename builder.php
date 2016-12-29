@@ -47,7 +47,6 @@ class Builder
             $this->console("[Parser] Error File {$this->config['output']} not created. Content not find.");
     }
 
-
     public function replaced($context) {
         if (!empty($this->config['replaces'])) {
             foreach($this->config['replaces'] as $search => $re)
@@ -55,7 +54,6 @@ class Builder
         }
         return $context;
     }
-
 
     public function deleteDeveloperline($context) {
         $contextArr = explode("\n", $context);
@@ -80,7 +78,6 @@ class Builder
             //call_user_func($callback, $response);
             $callback($response);
         }
-
     }
 
     public function recursiveGetContent ($path, &$context) {
@@ -88,13 +85,7 @@ class Builder
         $markPattern = $this->config['mark'];
         if (is_dir($path)) {
             $files = scandir($path);
-
             foreach($files as $file) {
-
-                //print_r("\n");
-//                print_r(is_file($path.$file) .' - '. $path.$file);
-//                print_r("\n");
-
                 if ($file == '.' || $file == '..') {
                     continue;
                 }

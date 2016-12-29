@@ -1,16 +1,16 @@
 (function () {
-
     var App = App || {}; // THIS-LINE-WILL-DELETED
-    var api = {};
+    var sidebar = {};
 
     /**
-     * @namespace App.Api.request
+     * @namespace App.Sidebar.load
      */
-    api.request = function () {};
+    sidebar.load = function () {};
 
-    api.post = function () {};
+    /**
+     * @namespace App.Sidebar.loadMenu
+     */
+    sidebar.loadMenu = function () {};
 
-    api.get = function () {};
-
-    return api
+    return sidebar
 })()

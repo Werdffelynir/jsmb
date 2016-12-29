@@ -1,40 +1,40 @@
 # JavaScript Module Builder
 
-Простой сборщик JavaScript файлов. Использует модульную структуру.
+Простой сборщик JavaScript файлов, модулей приложения.
+Принцип работы заключается в шаблонизации основного JavaScript файла `main` 
+с подстанновкой шаблонов по нахожденю `модуль = путь к файлу`
 
-### config.json
+**Сборщик**
+
+- config.json   Файл конфигурации для скриптов builder.php watcher.py
+- builder.php   Обработчик файлов, компилирует модули в один файл
+- watcher.py    Наблюдатель за изминениями в рабочей директории
+
+
+**config.json**
+
+Основные параметры:
+
 ```json
 {
-  "dump":     "build/application.js",
-  "layout":   "src/layout.js",
-  "root":     "src/",
-  "modules_auto_include": false,
-  "modules": {
-    "module_one":    "module_one.js",
-    "module_two":    "module_two.js",
-    "helper":        "helper.js",
-    "static":        "static.js"
-  },
-  "delete_string_marker" : "// <<< DELETE THIS STRING",
-  "replaces" : {}
+  "output": "build/application.js",
+  "main":  "src/main.js",
+  "root": "src/",
+  "watcher_directory": "src/",
+  "watcher_command": "php -f builder.php < config.json"
 }
 ```
 
-### Run 
+- `output`                файл вывода
+- `main`                  файл входа, основной шаблон
+- `root`                  корень модулей
+- `watcher_directory`     директория наблюдения
+- `watcher_command`       комманда выполнения при изминении
+
+
+**Запуск**
 
 ```bash
 cd /path/to/builder
-php -f parser.php
-```
-
-### Watcher Config
-```python
-FNAME = 'src'
-SYSCOMMAND = 'php -f parser.php'
-```
-
-### Run watcher
-```bash
-cd /path/to/builder
-python3 watcher.py 
+python3 watcher.py config.json
 ```

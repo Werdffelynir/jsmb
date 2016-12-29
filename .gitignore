@@ -8,5 +8,4 @@ out
 gen
 # Created by .ignore support plugin (hsz.mobi)
 node_modules/
-v1/build/*
-v2/js/*
+build/*

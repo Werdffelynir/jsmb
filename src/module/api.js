@@ -1,18 +1,21 @@
-// MODULE Helper
-var App = window.App || {}; // THIS-LINE-WILL-DELETED
+(function () {
+    var App = App || {}; // THIS-LINE-WILL-DELETED
+    var api = {};
 
-/**
- * @type {{}}
- */
-App.Api = {};
+    /**
+     * @namespace App.Api.request
+     */
+    api.request = function () {};
 
-/**
- * a
- */
-App.Helper.one = function () {};
+    /**
+     * @namespace App.Api.post
+     */
+    api.post = function () {};
 
-/**
- *
- */
-App.Helper.two = function () {};
-// s
+    /**
+     * @namespace App.Api.get
+     */
+    api.get = function () {};
+
+    return api
+})()
