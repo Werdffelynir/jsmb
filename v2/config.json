@@ -1,5 +1,7 @@
 {
   "output": "js/application.js",
   "main":  "jsrc/main.js",
-  "root": "jsrc/"
+  "root": "jsrc/",
+  "watcher_directory": "jsrc/",
+  "watcher_command": "php -f builder.php < config.json"
 }

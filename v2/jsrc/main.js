@@ -2,8 +2,12 @@
 
     window.App = {};
 
-    App.Helper = [[['module/helper']]];
+    App.Controller = [[['controller']]];
 
-    [[['controller']]];
+    App.Sidebar = [[['module/sidebar']]];
+
+    [[['module/helper']]];
 
 })(window);
+
+// as-a-baaaasads

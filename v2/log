@@ -14,5 +14,9 @@ file_put_contents('log', 'is', FILE_APPEND);
  * cat config.json | php builder.php
  */
 
+isisisisisisisisisisisisisisisisisisisisisisisisisisisis
 
+php -f builder.php
+cat config.json | php -f builder.php
 
+python3 watcher.py config.json
