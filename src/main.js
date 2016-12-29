@@ -6,8 +6,10 @@
 
     App.Sidebar = [[['module/sidebar']]];
 
-    [[['module/helper']]];
+    App.Api = [[['module/api']]];
+
+    [[['libs/helper']]];
+
+    App.Controller.construct();
 
 })(window);
-
-// as-a-baaaasads
