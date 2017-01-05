@@ -1,15 +1,14 @@
 (function (window) {
 
-    window.App = {};
+    //var NamespaceApplication = [[['constructor']]];
+    var Application = [[['constructor']]];
 
-    App.Controller = [[['controller']]];
+    Application.prototype = [[['prototype']]];
 
-    App.Sidebar = [[['module/sidebar']]];
+    Application.prototype.constructor = Application;
 
-    App.Api = [[['module/api']]];
+    [[['static']]];
 
-    [[['libs/helper']]];
-
-    App.Controller.construct();
+    window.Application = Application;
 
 })(window);
